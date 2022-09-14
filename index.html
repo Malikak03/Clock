@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Date and Time</title>
+    <style>
+        .container{
+            margin: 100px;
+            background-color: rgba(222, 184, 135, 0.781);
+            padding: 50px;
+            border-radius: 15px;
+        }
+        nav{
+            background-color: rgba(168, 167, 167, 0.767);
+        }
+    </style>
+    <script>
+        let a,date,time
+        const options = {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}
+        setInterval(() => {
+        a = new Date()
+        date = a.toLocaleDateString(undefined, options)
+        time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds()
+        document.getElementById('time').innerHTML = time + "<br>on " + date
+        }, 1000)
+
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Current Date and Time</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </nav>
+      <div class="container my-4">
+            <h1 class="display-4">Current Time Is: <span id="time"></span></h1>
+            <hr class="my-4">
+            <p>We are here to show you time and date.</p>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+</html>
